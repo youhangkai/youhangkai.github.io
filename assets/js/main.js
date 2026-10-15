@@ -47,6 +47,7 @@
       var n = key === "all" ? pubs.length : pubs.filter(function (p) { return p.getAttribute("data-type") === key; }).length;
       var span = btn.querySelector(".count");
       if (span) span.textContent = n;
+      if (!n && key !== "all") btn.hidden = true;
     });
 
     filterBar.addEventListener("click", function (e) {
